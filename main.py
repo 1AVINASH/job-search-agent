@@ -1,5 +1,5 @@
 from logger import app_logger
-from fact_generator import JobSearcher
+from job_searcher import JobSearcher
 
 if __name__ == "__main__":
     # Add your subject and expertise here

@@ -78,6 +78,7 @@ class JobSearcher:
     def get_fact(self):
         history = self.load_chat_history()
         current_date = datetime.now().strftime("%d %b %Y")
+        current_date_time = datetime.now().strftime("%d %b %YT%H%M:%S")
         # Append user prompt
         history.append({"role": "user", "content": 
             f"Give me new company details in the above provided format that is hiring for remote role for a software engineer with 4 YoE. Only include jobs which were posted in 2025 and give preference to latest job posts and try to find something posted in the last month. Today is {current_date}\
@@ -100,7 +101,7 @@ class JobSearcher:
             print(e)
             raise e
         # Append assistant response to history
-        history.append({"role": "assistant", "content": assistant_reply, "metadata": {"input_tokens": input_tokens, "company": parsed_assistant_reply}})
+        history.append({"role": "assistant", "content": assistant_reply, "metadata": {"current_date_time": current_date_time, "input_tokens": input_tokens, "company": parsed_assistant_reply}})
         self.save_chat_history(history)
 
         return assistant_reply
