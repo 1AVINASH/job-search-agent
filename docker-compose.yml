@@ -1,0 +1,15 @@
+services:
+  backend:
+    image: programming_daily:latest
+    build:
+      context: .
+    container_name: programming_daily
+    ports:
+      - "9000:8000"
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - PORT=9000
+      - TZ=Asia/Kolkata # Set the timezone to IST
+    command: uv run main.py  # Matches your bash script
