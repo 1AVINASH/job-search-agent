@@ -1,9 +1,9 @@
 services:
   backend:
-    image: programming_daily:latest
+    image: job_search_agent:latest
     build:
       context: .
-    container_name: programming_daily
+    container_name: job_search_agent
     ports:
       - "9000:8000"
     volumes:
