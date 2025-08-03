@@ -78,7 +78,7 @@ class JobSearcher:
     def get_fact(self):
         history = self.load_chat_history()
         current_date = datetime.now().strftime("%d %b %Y")
-        current_date_time = datetime.now().strftime("%d %b %YT%H%M:%S")
+        current_date_time = datetime.now().strftime("%d %b %YT%H:%M:%S")
         # Append user prompt
         history.append({"role": "user", "content": 
             f"Give me new company details in the above provided format that is hiring for remote role for a software engineer with 4 YoE. Only include jobs which were posted in 2025 and give preference to latest job posts and try to find something posted in the last month. Today is {current_date}\

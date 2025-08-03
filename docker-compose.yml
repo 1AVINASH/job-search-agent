@@ -2,12 +2,12 @@ services:
   backend:
     image: job_search_agent:latest
     build:
-      context: .
+      context: ./app
     container_name: job_search_agent
     ports:
       - "9000:8000"
     volumes:
-      - .:/app
+      - ./app:/app
     working_dir: /app
     environment:
       - PORT=9000
